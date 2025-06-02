@@ -1,0 +1,16 @@
+<div class="header">
+  <a href="/frontend/public" class="header__logo">
+    <b>Lern<span>Hub</span></b>
+  </a>
+  <div class="header__search">
+    <mat-icon>search</mat-icon>
+    <input (focus)="showResults = true"
+           (blur)="showResults = false"
+           [(ngModel)]="searchTerm"
+           type="text"
+           placeholder="LernHub durchsuchen"/>
+  </div>
+  <div class="header__results" *ngIf="showResults && searchTerm != ''">
+    Keine Inhalte gefunden!
+  </div>
+</div>

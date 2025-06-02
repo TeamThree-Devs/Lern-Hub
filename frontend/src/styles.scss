@@ -1,1 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg: #0f172b;
+  --surface: #1a1b1e;
+  --font: ui-sans-serif, system-ui, sans-serif;
+  --text-color: #e2e8f0;
+  --text-muted-color: #90a1b9;
+  --border: 1px solid #314158;
+  --primary: #00c16a;
+  --warning: 255, 223, 32;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: var(--bg);
+  color: var(--text-color);
+  font-family: var(--font), serif;
+}
+
+input, textarea {
+  background-color: transparent;
+  outline: none;
+  border: 2px solid #425063;
+  border-radius: 4px;
+  color: var(--text-color);
+  padding: 6px 10px;
+
+  &:focus {
+    border-color: var(--primary);
+  }
+}
+
+.info-card {
+  color: rgb(var(--warning));
+  background-color: rgba(var(--warning), 0.1);
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid rgb(var(--warning), 0.4);
+  position: relative;
+
+  &:after{
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    content: "i";
+    border-radius: 50%;
+    border: inherit;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    font-size: 12px;
+    background-color: var(--bg);
+  }
+}
+
+/* Für WebKit-Browser (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* Für Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #1a1a1a;
+}
+
