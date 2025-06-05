@@ -5,6 +5,8 @@
 [![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](./LICENSE)
 
+---
+
 ## 🚀 Ziel & Vision
 
 **Lern-Hub** hilft Auszubildenden aus Deutschland dabei, sich optimal auf die **schriftlichen IHK-Prüfungen** AP1 und AP2 vorzubereiten.
@@ -34,6 +36,16 @@ Derzeit liegt der **Fokus auf IT-Ausbildungsberufen** wie:
 | **Angular**     | Web-Frontend Framework    |
 | **Spring Boot** | REST-API & Backend-Logik |
 | **MySQL**       | Datenbankstruktur         |
+
+---
+
+## 🎗️ Unterstützt durch
+
+<a href="https://deinserverhost.de" target="_blank">
+  <img src="./frontend/src/_assets/deinServerHost-Logo.svg" alt="DeinServerHost Logo" height="60"/>
+</a><br><br>
+
+**DeinServerHost** unterstützt Lern-Hub mit leistungsstarken, zuverlässigen und bezahlbaren Hostinglösungen.
 
 ---
 
