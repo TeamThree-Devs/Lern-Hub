@@ -1,0 +1,22 @@
+.learning-module-branche {
+  display: flex;
+  gap: var(--gap);
+
+  .learning-module-branche__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    background-color: var(--secondary-surface);
+    padding: 8px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.13);
+    }
+  }
+
+  mat-icon {
+    color: var(--primary);
+  }
+}

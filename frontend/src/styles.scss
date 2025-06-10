@@ -7,6 +7,7 @@
   --text-muted-color: #90a1b9;
   --border: 1px solid #314158;
   --primary: #00c16a;
+  --secondary-primary: #02a85d;
   --warning: 255, 223, 32;
 
   --gap: 10px;
@@ -46,7 +47,7 @@ input, textarea {
   border: 1px solid rgb(var(--warning), 0.4);
   position: relative;
 
-  &:after{
+  &:after {
     position: absolute;
     top: -8px;
     left: -8px;
@@ -58,6 +59,17 @@ input, textarea {
     text-align: center;
     font-size: 12px;
     background-color: var(--bg);
+  }
+}
+
+button {
+  background-color: var(--primary);
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  &:hover {
+    background-color: var(--secondary-primary);
   }
 }
 

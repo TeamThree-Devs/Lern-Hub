@@ -19,6 +19,14 @@
     }
   }
 
+  .landing-page__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
   p{
     text-align: center;
     color: var(--text-muted-color);

@@ -1,6 +1,7 @@
 export interface LearningModule {
-  title?: string;
+  title: string;
   description?: string;
+  branche?: string;
 }
 
 
@@ -25,6 +26,18 @@ export const LEARNING_MODULES: LearningModule[] = [
   {
     title: 'test2',
     description: 'Wichtige Inhalte der Prüfungen',
+  },
+  {
+    title: 'LangerBerufsNameFürEinenTestHabibi',
+    description: 'Mit ganz viel Text kann man auf Arbeit viel Arbeitszeitbetrug machen. Würde empfehlen jeden zu hauen! Mach dich fertig und gehe schlafen',
+  },
+  {
+    title: 'LangerBerufsNameFürEinenTestHabibi',
+    description: 'Mit ganz viel Text kann man auf Arbeit viel Arbeitszeitbetrug machen. Würde empfehlen jeden zu hauen! Mach dich fertig und gehe schlafen',
+  },
+  {
+    title: 'LangerBerufsNameFürEinenTestHabibi',
+    description: 'Mit ganz viel Text kann man auf Arbeit viel Arbeitszeitbetrug machen. Würde empfehlen jeden zu hauen! Mach dich fertig und gehe schlafen',
   },
   {
     title: 'LangerBerufsNameFürEinenTestHabibi',
