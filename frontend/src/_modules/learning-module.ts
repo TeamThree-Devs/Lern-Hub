@@ -11,6 +11,10 @@ export const LEARNING_MODULES: LearningModule[] = [
     description: 'Wichtiger Inhalt der AP1 & AP2',
   },
   {
+    title: 'Bauer',
+    description: 'Wichtiger Inhalt der AP1 & AP2',
+  },
+  {
     title: 'Bürokaufmann/frau',
     description: 'Wichtige Inhalte der Prüfungen',
   },
