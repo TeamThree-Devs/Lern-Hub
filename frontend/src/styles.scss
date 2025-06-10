@@ -1,12 +1,16 @@
 :root {
   --bg: #0f172b;
   --surface: #1a1b1e;
+  --secondary-surface: rgba(30, 42, 58, 0.48);
   --font: ui-sans-serif, system-ui, sans-serif;
   --text-color: #e2e8f0;
   --text-muted-color: #90a1b9;
   --border: 1px solid #314158;
   --primary: #00c16a;
   --warning: 255, 223, 32;
+
+  --gap: 10px;
+  --border-radius: 4px;
 }
 
 

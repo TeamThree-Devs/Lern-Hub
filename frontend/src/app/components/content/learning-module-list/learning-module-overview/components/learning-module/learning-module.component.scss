@@ -1,0 +1,33 @@
+.learning-module {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  justify-content: center;
+
+  .learning-module__module-card {
+    background-color: var(--secondary-surface);
+    padding: 10px;
+    flex: 1 1 200px;
+    max-width: 250px;
+    height: 110px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: var(--border);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+
+    &:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+    }
+  }
+
+  p {
+    color: var(--text-muted-color);
+  }
+
+  a {
+    all: unset;
+  }
+}
