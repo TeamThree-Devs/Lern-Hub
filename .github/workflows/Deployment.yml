@@ -1,0 +1,59 @@
+name: Debian 12 Server Deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.14.0'
+
+      - name: Build Angular Frontend
+        working-directory: ./frontend
+        run: |
+          npm ci
+          npm run build --configuration production
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Build Spring Boot JAR
+        working-directory: ./backend
+        run: ./mvnw clean package -DskipTests
+
+      - name: Upload via SCP
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: |
+            ./frontend/dist
+            ./backend/target/*.jar
+            ./docker-compose.yml
+          target: /opt/lern-hub
+          strip_components: 1
+
+      - name: Restart Docker on Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}                       # benutzerdefinierter SSH-Port
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /opt/lern-hub
+            docker compose down
+            docker compose up --build -d
