@@ -32,6 +32,13 @@ jobs:
         working-directory: ./backend
         run: ./mvnw clean package -DskipTests
 
+      - name: Prepare deploy Folder
+        run: |
+          mkdir -p deploy
+          cp -r frontend/dist/Lern-Hub/* deploy/
+          cp backend/target/*.jar deploy/
+          cp docker-compose.yml deploy/
+
       - name: Upload via SCP
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -39,12 +46,8 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: |
-            ./frontend/dist
-            ./backend/target/*.jar
-            ./docker-compose.yml
-          target: /opt/lern-hub
-          strip_components: 1
+          source: "deploy/*"
+          target: "/opt/lern-hub"
 
       - name: Restart Docker on Server
         uses: appleboy/ssh-action@v1.0.3
