@@ -1,20 +1,20 @@
-version: "3.8"
+version: "3.9"
 
 services:
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: lernhub_frontend
-    ports:
-      - "80:80"
-    restart: always
-
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: lernhub_backend
+    image: eclipse-temurin:21-jdk
+    container_name: lern-hub-backend
+    working_dir: /app
+    volumes:
+      - ./learn_hub-0.0.1-SNAPSHOT.jar:/app/app.jar
+    command: ["java", "-jar", "app.jar"]
     ports:
       - "8080:8080"
-    restart: always
+
+  frontend:
+    image: nginx:stable-alpine
+    container_name: lern-hub-frontend
+    volumes:
+      - ./browser:/usr/share/nginx/html
+    ports:
+      - "80:80"
