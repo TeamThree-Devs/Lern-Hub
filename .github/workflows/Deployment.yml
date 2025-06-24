@@ -32,6 +32,13 @@ jobs:
         working-directory: ./backend
         run: ./mvnw clean package -DskipTests
 
+      - name: Prepare Deployment folder
+        run: |
+          mkdir -p deploy
+          cp -r frontend/dist/lern-hub/* deploy/ 2>/dev/null || echo "No Angular output"
+          cp backend/target/learn_hub-0.0.1-SNAPSHOT.jar deploy/ 2>/dev/null || echo "JAR not found"
+          cp docker-compose.yml deploy/ 2>/dev/null || echo "No docker-compose.yml"
+
       - name: Upload via SCP
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -39,10 +46,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: |
-            frontend/
-            backend/
-            docker-compose.yml
+          source: "deploy/*"
           target: /opt/lern-hub
           strip_components: 0
 
