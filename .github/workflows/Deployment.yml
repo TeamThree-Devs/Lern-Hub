@@ -35,7 +35,7 @@ jobs:
       - name: Prepare deploy Folder
         run: |
           mkdir -p deploy
-          cp -r frontend/dist/Lern-Hub/* deploy/
+          cp -r frontend/dist/lern-hub/* deploy/
           cp backend/target/*.jar deploy/
           cp docker-compose.yml deploy/
 
