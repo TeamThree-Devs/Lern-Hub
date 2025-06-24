@@ -15,6 +15,6 @@ services:
     image: nginx:stable-alpine
     container_name: lern-hub-frontend
     volumes:
-      - ./frontend/dist/lern-hub:/usr/share/nginx/html:ro
+      - ./browser:/usr/share/nginx/html:ro
     ports:
       - "8081:80"
