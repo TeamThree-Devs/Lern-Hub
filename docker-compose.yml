@@ -17,4 +17,4 @@ services:
     volumes:
       - ./browser:/usr/share/nginx/html
     ports:
-      - "80:80"
+      - "8081:80"
