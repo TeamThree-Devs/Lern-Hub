@@ -48,7 +48,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "deploy/*"
           target: /opt/lern-hub
-          strip_components: 0
+          strip_components: 1
 
       - name: Restart Docker on Server
         uses: appleboy/ssh-action@v1.0.3
