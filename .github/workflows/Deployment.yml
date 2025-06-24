@@ -20,7 +20,7 @@ jobs:
         working-directory: ./frontend
         run: |
           npm ci
-          npm run build --configuration production
+          npx ng build Lern-Hub --configuration production
 
       - name: Setup Java
         uses: actions/setup-java@v4
